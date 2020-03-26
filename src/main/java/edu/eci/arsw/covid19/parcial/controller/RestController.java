@@ -36,4 +36,13 @@ public class RestController {
         }
     }
 
+    @GetMapping("/statistics")
+    public ResponseEntity<?> getSumarizedStatistics(){
+        try {
+            return new ResponseEntity<>(covidService.getSumaryByCountry(), HttpStatus.ACCEPTED);
+        }catch (Exception e){
+            return new ResponseEntity<>("No fue posible",HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

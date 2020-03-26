@@ -11,8 +11,6 @@ public class CovidStats {
     private String city;
     private String province;
     private String country;
-    private String lastUpdate;
-    private String keyId;
     private Integer confirmed;
     private Integer deaths;
     private Integer recovered;
