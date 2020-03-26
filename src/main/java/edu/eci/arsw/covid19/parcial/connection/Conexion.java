@@ -1,4 +1,4 @@
-package edu.eci.escualing.arsw.parcial.connection;
+package edu.eci.arsw.covid19.parcial.connection;
 
 import org.springframework.stereotype.Service;
 
@@ -9,14 +9,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 @Service
-public class HttpConnection {
+public class Conexion {
 
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=";
+    private static final String GET_URL = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats";
 
-    public String getConnection(String city) throws IOException {
+    public String getConnection() throws IOException {
 
-        URL obj = new URL(GET_URL+city);
+        URL obj = new URL(GET_URL);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
