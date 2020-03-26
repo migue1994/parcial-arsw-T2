@@ -15,22 +15,25 @@ import static java.util.stream.Collectors.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class CovidServiceImpl implements CovidService {
 
     private Gson gson = new GsonBuilder().create();
 
-    public Status getProvincesFromApi() throws IOException {
+    public List<CovidStats> getProvincesFromApi() throws IOException {
         Status s = getAll();
-        return s;
+        List<CovidStats> countries = s.getData().getCovid19Stats();
+        return countries;
 
     }
 
-    public void getByCountries(){
+    public List<CovidStats> getByCountries(String countr){
         Status s = getAll();
         List<CovidStats> allCountries = s.getData().getCovid19Stats();
-
+        Map<String, List<CovidStats>> country = allCountries.stream().collect(groupingBy(CovidStats::getCountry));
+        return country.get(countr);
     }
 
     private Status getAll(){

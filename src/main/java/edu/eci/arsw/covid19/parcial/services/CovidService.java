@@ -1,9 +1,11 @@
 package edu.eci.arsw.covid19.parcial.services;
 
-import edu.eci.arsw.covid19.parcial.model.Status;
+import edu.eci.arsw.covid19.parcial.model.CovidStats;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface CovidService {
-    Status getProvincesFromApi() throws IOException;
+    List<CovidStats> getProvincesFromApi() throws IOException;
+    List<CovidStats> getByCountries(String countr);
 }
