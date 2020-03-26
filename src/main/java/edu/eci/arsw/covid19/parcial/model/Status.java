@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Status {
-    private String error;
+    private boolean error;
     private String statusCode;
     private String message;
     private Datos data;

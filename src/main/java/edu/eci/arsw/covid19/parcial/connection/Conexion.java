@@ -12,7 +12,7 @@ import java.net.URL;
 public class Conexion {
 
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats";
+    private static final String GET_URL = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Colombia";
 
     public String getConnection() throws IOException {
 

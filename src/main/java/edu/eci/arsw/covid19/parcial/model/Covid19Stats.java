@@ -7,14 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class covid19Stats {
+public class Covid19Stats {
     private String city;
     private String province;
     private String country;
-    private String lastUpdate;
     private String keyId;
-    private int confirmed;
-    private int deaths;
-    private int recovered;
+    private long confirmed;
+    private long deaths;
+    private long recovered;
 
 }
