@@ -9,5 +9,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Dato {
-    private List<Covid19Stats> covid19Stats;
+    private String lastChecked;
+    private List<CovidStats> covid19Stats;
 }
