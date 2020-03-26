@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Formulario</title>
     <meta charset="UTF-8">
-    <title>Covid19</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="js/apiclient.js"></script>
+    <script src="js/app.js"></script>
+
+
 </head>
-<body>
+<body onload="app.getCountries()">
 <div class="container">
     <br><br>
     <div class="row" style="justify-content: center">
@@ -30,7 +36,7 @@
                     <th>Num Cured</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="status">
 
                 </tbody>
             </table>
