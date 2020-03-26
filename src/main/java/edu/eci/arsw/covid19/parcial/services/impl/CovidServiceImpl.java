@@ -48,9 +48,9 @@ public class CovidServiceImpl implements CovidService {
     }
 
     /**
-     *
-     * @param countr
-     * @return
+     *Retorna las estadisticas agrupado por cada pais
+     * @param countr el nombre del país que se desea
+     * @return las estadisticas del pais
      */
     public List<CovidStats> getByCountries(String countr){
         Status s = getAll();
@@ -59,6 +59,10 @@ public class CovidServiceImpl implements CovidService {
         return country.get(countr);
     }
 
+    /**
+     * Realiza la agrupación y cálculo de las estadisticas totalizadas por cada país
+     * @return una lista con las estadisticas totales por cada país
+     */
     public List<Country> getSumaryByCountry(){
         Status s = getAll();
         List<CovidStats> allCountries = s.getData().getCovid19Stats();
@@ -84,6 +88,10 @@ public class CovidServiceImpl implements CovidService {
         return results;
     }
 
+    /**
+     *Realiza el almacenamiento en cache, también comprueba si han pasado más de 5 seg despues de la última inserción
+     * @return todo el objeto json viene del api
+     */
     private Status getAll(){
         if (System.nanoTime() - this.currentTime > this.timeCache){
             String url = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats";
