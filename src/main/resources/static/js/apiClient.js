@@ -1,5 +1,5 @@
 var apiclient = (function () {
-	var appUrl = 'http://localhost:8080/';
+	var appUrl = 'https://parcial-arsw.herokuapp.com/';
 	return {
 		getCountries : function (path, callback) {
 			jQuery.ajax({
